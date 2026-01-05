@@ -4,8 +4,8 @@
  *
  * Licensed under the LGPL v2.1, see the file COPYING.LIB in this tarball.
  */
-
 #include <stdlib.h>
+#include <string.h>
 
 char *strdup(register const char *s1)
 {

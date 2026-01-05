@@ -51,7 +51,7 @@ void log_write(const char *format, ...)
 	char msg[1024];
         va_list args;       
         va_start( args, format );
-	int n = vsprintf(msg, format, args);
+	vsprintf(msg, format, args);
 	if (log_fd >= 0)
 		sys_write(log_fd, msg, strlen(msg));
 }

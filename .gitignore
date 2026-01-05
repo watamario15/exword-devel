@@ -1,7 +1,6 @@
 .vscode/
 build/
 *.o
-*.htm
 *.d01
 *.elf
 *.map

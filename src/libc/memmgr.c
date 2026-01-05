@@ -5,6 +5,9 @@
 //  
 // This code is in the public domain.
 //----------------------------------------------------------------
+#include <stdlib.h>
+#include <string.h>
+
 #include "logger.h"
 #include "memmgr.h"
 
@@ -62,7 +65,7 @@ struct r_hdr* get_r_hdr() {
 
 void set_mem_pool()
 {
-    int ret, model = 0;
+    int model = 0;
     pool_size = 0;
     struct r_hdr *hdr = get_r_hdr();
     if (hdr != 0) {

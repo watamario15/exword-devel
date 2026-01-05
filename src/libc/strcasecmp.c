@@ -4,6 +4,7 @@
  *
  * Licensed under the LGPL v2.1, see the file COPYING.LIB in this tarball.
  */
+#include <ctype.h>
 
 int strcasecmp(register const char *s1, register const char *s2)
 {

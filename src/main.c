@@ -6,13 +6,14 @@
 #include <sh4a/input/keypad.h>
 
 int main(void) {
-    set_pen(create_rgb16(0, 0, 0));
-    draw_rect(0, 0, 528, 320);
-    set_pen(create_rgb16(255, 255, 255));
-    render_text(0, 0, "Happy New Year 2026 from EX-word DATAPLUS 5!!");
-    lcdc_copy_vram();
-    
-    do keypad_read();
-    while (!get_key_state(KEY_POWER));
-    exit(0);
+  set_pen(create_rgb16(0, 0, 0));
+  draw_rect(0, 0, 528, 320);
+  set_pen(create_rgb16(255, 255, 255));
+  render_text(0, 0, "Hello, world!");
+  lcdc_copy_vram();
+  
+  while (1) {
+    keypad_read();
+    if (get_key_state(KEY_POWER) || get_key_state(KEY_BACK)) exit(-2);
+  }
 }

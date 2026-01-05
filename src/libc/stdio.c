@@ -5,7 +5,7 @@
 
 
 /* These are wrappers that wrap the EXWord filesystem calls.
-   I have implemented just enogh to work with regards to gnuboy.
+   I have implemented just enough to work with regards to gnuboy.
    As such the are not the most robust implementation for general
    use and don't necessarily comply fully with POSIX.
 */
@@ -65,7 +65,7 @@ int fclose(FILE *fp)
 
 int fseek(FILE *stream, long offset, int whence)
 {
-	unsigned long pos;
+	unsigned long pos = 0;
 	FILE * f = stream;
 	if (whence == SEEK_SET) {
 		pos = (unsigned long)offset;
@@ -108,7 +108,6 @@ char *fgets(char *s, int size, FILE *stream)
 	char *p;
 	int i;
 	int read, bytes;
-	int fd = stream->fd;
 	if (size <= 0)
 		goto error;
 	p = s;

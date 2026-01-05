@@ -2,6 +2,10 @@
  * Copyright (C) 2013  Brian Johnson
  * Author: Brian Johnson <brijohn@gmail.com>
  */
+#include <stdlib.h>
+#include <unistd.h>
+#include <ctype.h>
+#include <string.h>
 
 static void (*atexit_cb)(void) = 0;
 
