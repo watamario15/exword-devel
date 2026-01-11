@@ -2,7 +2,7 @@
 
 ![](image.jpg)
 
-This repository is a skeleton for developing homebrews (addons) for CASIO EX-word DATAPLUS 5/6/7 with automatic GitHub Actions build on pushes to the `main` branch. `src/main.c` in this repository shows `Hello, world!` in white text on black background, and exits on Power or Back key press. You can install your app to your EX-word device in the same way as [Gnuboy EX](https://brain.fandom.com/ja/wiki/Gnuboy_EX) by using [libexword](https://brain.fandom.com/ja/wiki/Libexword) tool. For local setup, install [DevkitSH4](https://brain.fandom.com/ja/wiki/DevkitSH4) compiler and invoke `make` to build in `build/ja/` and `build/cn/`.
+This repository is a skeleton for developing homebrews (addons) for CASIO EX-word DATAPLUS 5/6/7 with GitHub Actions build on tag push and manual dispatch. `src/main.c` in this repository shows `Hello, world!` in white text on black background, and exits on Power or Back key press. You can install your app to your EX-word device in the same way as [Gnuboy EX](https://brain.fandom.com/ja/wiki/Gnuboy_EX) by using [libexword](https://brain.fandom.com/ja/wiki/Libexword) tool. For local setup, install [devkitSH4](https://brain.fandom.com/ja/wiki/devkitSH4) compiler and invoke `make` to build in `build/ja/` and `build/cn/`. devkitSH4 automatically downloads [libdataplus](https://github.com/brijohn/libdataplus) during the installation process.
 
 - `html/`: Metadata HTML templates to be read by the EX-word system (must be in CRLF)
 - `src/`: C source files
@@ -16,7 +16,7 @@ This repository is inspired by [yukkuri-Dev/EXtend-Word](https://github.com/yukk
 
 ---
 
-このリポジトリは CASIO 製電子辞書 EX-word の DATAPLUS 5/6/7 で動作するプログラム（追加コンテンツ）を開発するためのテンプレートで、`main` branch への push 時に自動で GitHub Actions ビルドも走ります。同梱の `src/main.c` は、黒背景に白文字で `Hello, world!` と表示し、電源ボタンか戻るボタンで終了するものです。[libexword](https://brain.fandom.com/ja/wiki/Libexword) ツールを使えば [Gnuboy EX](https://brain.fandom.com/ja/wiki/Gnuboy_EX) と同様の方法で EX-word にインストールできます。ローカル環境では、[DevkitSH4](https://brain.fandom.com/ja/wiki/DevkitSH4) コンパイラを導入して `make` すると `build/ja/` と `build/cn/` 以下にビルドされます。
+このリポジトリは CASIO 製電子辞書 EX-word の DATAPLUS 5/6/7 で動作するプログラム（追加コンテンツ）を開発するためのテンプレートで、tag の push や手動発行で GitHub Actions ビルドも走ります。同梱の `src/main.c` は、黒背景に白文字で `Hello, world!` と表示し、電源ボタンか戻るボタンで終了するものです。[libexword](https://brain.fandom.com/ja/wiki/Libexword) ツールを使えば [Gnuboy EX](https://brain.fandom.com/ja/wiki/Gnuboy_EX) と同様の方法で EX-word にインストールできます。ローカル環境では、[devkitSH4](https://brain.fandom.com/ja/wiki/devkitSH4) コンパイラを導入して `make` すると `build/ja/` と `build/cn/` 以下にビルドされます。devkitSH4 のインストール時に [libdataplus](https://github.com/brijohn/libdataplus) も同時にインストールされます。
 
 - `html/`: EX-word システムが使用するメタデータを記載した HTML テンプレート（CRLF 必須）
 - `src/`: C ソースファイル

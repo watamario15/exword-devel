@@ -2,9 +2,12 @@ name: Build
 
 on:
   push:
-    branches:
-      - main
+    tags: '*'
   workflow_dispatch:
+    inputs:
+      tag:
+        type: string
+        description: 'Tag Name to be created'
 
 jobs:
   build:
@@ -25,4 +28,9 @@ jobs:
           zip -r build.zip build
 
       - name: Publish
-        run: gh release create "$(date +'%Y%m%d')" -t "$(git rev-parse HEAD | cut -c -7)" -n "Automatic build of $(git rev-parse HEAD)." ./build.zip
+        run: |
+          if [ -n "${{ inputs.tag }}" ]; then
+            gh release create "${{ inputs.tag }}" -t "${{ inputs.tag }}" -n "Automatic build of $(git rev-parse HEAD)." ./build.zip
+          else
+            gh release create "${GITHUB_REF/refs\/*s\//}" -t "${GITHUB_REF/refs\/*s\//}" -n "Automatic build of $(git rev-parse HEAD)." ./build.zip
+          fi
